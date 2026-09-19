@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0a1b4f" />
+  <meta name="description" content="Sebuah halaman kecil untuk seseorang yang sangat berarti." />
+  <title>Teruntuk Sahabatku Naila ✦</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="passwordOverlay" class="password-overlay" role="dialog" aria-modal="true" aria-labelledby="passwordTitle">
+    <canvas id="gateStars" aria-hidden="true"></canvas>
+    <canvas id="rocketCanvas" aria-hidden="true"></canvas>
+    <div class="password-modal" id="passwordModal">
+      <div class="cat-feedback" id="catFeedback">
+        <img id="catImage" src="" alt="Cat reaction" style="display: none;" />
+        <p id="catText"></p>
+      </div>
+      <h2 id="passwordTitle">Masukin Passwordnya Naii</h2>
+      <p class="microcopy">Angka sebanyak 6 karakter yaa Naii</p>
+      <div class="password-input-group">
+        <input type="password" id="passwordInput" placeholder="Ketik di sini..." autocomplete="off" inputmode="numeric" aria-label="Password" />
+        <button id="passwordSubmit" type="button">Buka</button>
+      </div>
+    </div>
+  </div>
+
+  <canvas id="confettiCanvas" aria-hidden="true"></canvas>
+
+  <aside class="music-dock" id="musicDock" aria-label="Pemutar musik" inert>
+    <button class="music-toggle" id="musicToggle" aria-label="Putar atau jeda musik" title="Play / pause">
+      <svg class="icon-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10-6.5z"/></svg>
+      <svg class="icon-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h4v14H7zm6 0h4v14h-4z"/></svg>
+    </button>
+    <div class="music-meta">
+      <span class="music-kicker">song that describe you</span>
+      <strong id="trackTitle">You're on Your Own Kid — Taylor Swift</strong>
+      <div class="music-progress"><span id="musicProgress"></span></div>
+    </div>
+    <button class="music-note" id="musicExpand" aria-label="Tampilkan opsi musik" title="Music options">♫</button>
+    <div class="music-menu" id="musicMenu">
+      <button id="restartMusic" type="button">Ulangi dari awal</button>
+    </div>
+    <audio id="bgMusic" preload="auto" loop src="assets/musics/You're on Your Own Kid - Taylor Swift.mp3"></audio>
+  </aside>
+
+  <main inert>
+    <section class="hero" id="hero">
+      <div class="star-ambient star-1">✦</div>
+      <div class="star-ambient star-2">✧</div>
+      <div class="star-ambient star-3">✦</div>
+      <div class="star-ambient star-4">★</div>
+      <div class="star-ambient star-5">✧</div>
+      <div class="star-ambient star-6">★</div>
+
+      <p class="eyebrow reveal-on-load"><span></span>A LITTLE SURPRISE<span></span></p>
+      <div class="tiny-sparkle" aria-hidden="true">✦</div>
+
+      <button class="envelope-button" id="openEnvelope" type="button" aria-label="Buka surat" aria-expanded="false" aria-controls="siteContent">
+        <div class="envelope-shadow"></div>
+        <div class="envelope" aria-hidden="true">
+          <div class="envelope-back"></div>
+          <div class="letter-peek">
+            <span>untuk Naila</span>
+            <i></i>
+          </div>
+          <div class="envelope-flap"></div>
+          <div class="envelope-front-left"></div>
+          <div class="envelope-front-right"></div>
+          <div class="envelope-front-bottom"></div>
+          <div class="seal"><span>♥</span></div>
+        </div>
+      </button>
+
+      <h1>A little letter for<br /><em>Precious Friend</em></h1>
+      <button class="primary-btn" id="openLetterButton" type="button" aria-expanded="false" aria-controls="siteContent">Buka surat <span>✉</span></button>
+      <p class="microcopy">CLICK THE ENVELOPE</p>
+      <div class="scroll-hint" aria-hidden="true"><span></span></div>
+    </section>
+
+    <div class="site-content" id="siteContent" hidden inert>
+      <section class="intro section-pad" id="intro">
+        <div class="ornament ornament-left" aria-hidden="true">LOVE</div>
+        <div class="intro-copy reveal">
+          <p class="section-no">01 · A SMALL CELEBRATION</p>
+          <h2>You did it,<br /><em>Naii</em></h2>
+          <p class="lead" id="introGreeting">Selamat buat semua hal yang udah Naila perjuangkan sampai sejauh ini. Hari ini semua perjuangan Naila pantas dirayakan, semua usaha Naila selama ini udah bawa Naila sejauh ini, jadi you should be proud of yourself.</p>
+          <div class="recipient-line">
+            <span>Untuk</span>
+            <strong id="recipientName">Someone I Care About</strong>
+            <span class="heart">♥</span>
+          </div>
+          <button class="text-link" id="readLetterLink" type="button"> Semoga dibaca yaa!! <span>↓</span></button>
+        </div>
+
+        <figure class="polaroid hero-photo reveal">
+          <img src="assets/photos/Naila 1.jpeg" alt="Kenangan utama" />
+          <figcaption><span>✦</span>Best day of yourlife</figcaption>
+        </figure>
+      </section>
+
+      <section class="quote-band">
+        <div class="grain"></div>
+        <div class="quote-stars" aria-hidden="true"><span>✦</span><span>★</span><span>✧</span><span>★</span><span>✦</span></div>
+        <blockquote class="reveal">
+          “Mungkin hidup akan membawa Naila ke kehidupan yang Naila inginkan”
+        </blockquote>
+        <p class="quote-note">dan kami disini akan selalu berdoa dan mendukung Naila</p>
+      </section>
+      <section class="letter-section section-pad" id="letter">
+        <div class="letter-heading reveal">
+          <p class="section-no">02 · A LETTER, JUST FOR YOU, NAII</p>
+          <h2>Sedikit ucapan selamat dan nasihat untuk Naila</h2>
+        </div>
+
+        <article class="letter-paper reveal">
+          <div class="paper-pin" aria-hidden="true">✦</div>
+          <p id="letterText1">Pertama-tama selamat yaa naiii udah wisuda, akhirnya setelah mungkin banyak drama dengan air tinja selama penelitian, akhirnya naila udah menyelesaikan semua tanggung jawab naila sebagai mahasiswa di Unand. Keren dehh!!</p>
+          <p id="letterText2">Abis ini mungkin Naila melanjutkan plan Naila ke step selanjutnya yaa, semoga semua yang naila rencanakan dan inginkan bisa tergapai satu demi satu yaa Naii, mungkin gabakal mudah Naila buat ngegapainya, tapi Naila pasti bisa.</p>
+          <p id="letterText3">Apapun yang terjadi nanti di hidup Naila, semoga Naila selalu kuat dan tegar yaa. Jangan pernah berkecil hati dan sedih kalau ada sesuatu hal yang terjadi gak sesuai dengan kemauan Naila yaa, karena semua kejadian selalu ada pembelajaran berharganya.</p>
+          <p class="signature">With all my heart, <span id="senderName">someone who loves you</span></p>
+        </article>
+      </section>
+
+      <section class="timeline-section section-pad">
+        <div class="timeline-title reveal">
+          <p class="section-no">03 · YOUR LITTLE JOURNEY</p>
+          <h2>From the beginning<br /><em>to this moment.</em></h2>
+        </div>
+        <div class="timeline">
+          <article class="timeline-item reveal">
+            <span class="timeline-index">01</span>
+            <div><small>INITIAL PHASE</small><h3>Memulai perjalanan di perkuliahan</h3><p>Setiap mimpi besar dimulai dari langkah yang kecil, dan di tahap ini perjalanan Naila di dunia perkuliahan dimulai</p></div>
+          </article>
+          <article class="timeline-item reveal">
+            <span class="timeline-index">02</span>
+            <div><small>STRUGGLE PHASE</small><h3>4 tahun masa perkuliahan</h3><p>Pasti ada capek, pusing, revisian gak ada ujung, gak tidur, ngedrop dan air mata, tapi Naila melewati semuanya dengan baik.</p></div>
+          </article>
+          <article class="timeline-item reveal">
+            <span class="timeline-index">03</span>
+            <div><small>CELEBRATION PHASE</small><h3>Akhirnya, Naila sampai sini deh</h3><p>Thi is not the end of your journey, tapi halaman baru di hidup Naila yang layak dirayakan dengan bangga.</p></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="feature-section section-pad">
+        <div class="feature-card reveal">
+          <div class="feature-copy">
+            <p class="section-no">04 · THE THINGS THAT YOU SHOULD KNOW</p>
+            <h2>I am so proud<br /><em>of you.</em></h2>
+            <p id="featureGreeting">Mungkin Naila pernah kepikiran gak semua usaha Naila berhak dan layak buat dirayakan, tapi salah tau Naii. Sekecil apapun usahanya, semua itu layak dirayakan dengan bangga sama Naila</p>
+            <button class="soft-btn" id="celebrateButton" type="button">A little celebration <span>✦</span></button>
+          </div>
+          <figure class="tilted-photo">
+            <img src="assets/photos/Naila 2.jpeg" alt="Foto Naila" />
+            <figcaption>THIS MOMENT · <span id="featureYear">2026</span></figcaption>
+          </figure>
+        </div>
+      </section>
+      <section class="gallery-section section-pad">
+        <header class="gallery-header reveal">
+          <div>
+            <p class="section-no">05 · LITTLE PIECES OF YOUR JOURNEY</p>
+            <h2>Moments worth<br /><em>remembering.</em></h2>
+          </div>
+        </header>
+
+        <div class="gallery-grid">
+          <figure class="gallery-item reveal">
+            <img src="assets/photos/Naila 3.jpeg" alt="Kenangan 3" />
+            <figcaption>Officially Graduated Naii.</figcaption>
+          </figure>
+          <figure class="gallery-item reveal">
+            <img src="assets/photos/Naila 4.jpeg" alt="Kenangan 4" />
+            <figcaption>Terima kasih udah berjuang sejauh ini yaa Naii</figcaption>
+          </figure>
+          <figure class="gallery-item reveal">
+            <img src="assets/photos/Naila 5.jpeg" alt="Kenangan 5" />
+            <figcaption>Proud of your journey, Nai.</figcaption>
+          </figure>
+          <figure class="gallery-item reveal">
+            <img src="assets/photos/Naila 6.jpeg" alt="Kenangan 6" />
+            <figcaption>She believed she could, so she did</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="finale" id="finale">
+        <div class="finale-orbit orbit-one"></div>
+        <div class="finale-orbit orbit-two"></div>
+        <p class="section-no light reveal">06 · ONE LAST THING YOU SHOULD KNOW, NAII</p>
+        <h2 class="reveal">Wherever life takes you,<br /><em>I hope it is gentle with your heart.</em></h2>
+        <p class="finale-copy reveal" id="finalGreeting">Selamat atas pencapaiannya Naii. Terima kasih udah jadi orang yang berhati hangat dan selalu layak dibanggakan.</p>
+        <button class="final-btn reveal" id="finalCelebrate" type="button">Celebrate this moment <span>♥</span></button>
+        <div class="final-sign reveal"> Dibuat dengan sepenuh hati, buat <strong id="footerRecipient">someone special</strong></div>
+      </section>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
